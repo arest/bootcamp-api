@@ -26,6 +26,7 @@ class QuoteControllerTest extends BaseControllerTest
     }
 
 
+    
     public function testGetOneSuccess()
     {
         $client = static::createClient();
@@ -42,35 +43,57 @@ class QuoteControllerTest extends BaseControllerTest
         $this->assertArrayHasKey('author', $data );
         $this->assertEquals($data['content'], $quote->getContent() );	
     }
+    
 
 
 
     public function testCreateSuccess()
     {
         //$headers = $this->getGenericUserWsseHeaders();
-        $apiKey = $this->getApiUserKey();
-        $headers = [];
+        $apiKey = $this->getApiKey();
         
         $client = static::createClient(array('test',true));
 
         $author = $this->fixtures->getReference('author-1');
 
-        $params = array( 
+        $params = [
             'author' => $author->getId(),
             'content' => $this->faker->sentence,
-        );
+        ];
 
-        $crawler = $client->request('POST', '/api/quote', $params, $apiKey, $headers );
+        $crawler = $client->request('POST', '/api/quote?apikey='.$apiKey, $params );
 
         $this->writeLn("Api Create new Quote - Successful response");
 
-        $this->assertEquals( 201, $client->getResponse()->getStatusCode() );
         
+        $this->assertEquals( 201, $client->getResponse()->getStatusCode() );
         $data = json_decode( $client->getResponse()->getContent(), true);
+
 
         $this->assertArrayHasKey('id', $data);
         $this->assertArrayHasKey('content', $data);
         $this->assertArrayHasKey('author', $data);
+
+    }
+
+
+    public function testCreateUnsuccess()
+    {
+        
+        $client = static::createClient(array('test',true));
+
+        $author = $this->fixtures->getReference('author-1');
+
+        $params = [
+            'author' => $author->getId(),
+            'content' => $this->faker->sentence,
+        ];
+
+        $crawler = $client->request('POST', '/api/quote?apikey=abracadabra', $params );
+
+        $this->writeLn("Api Create new Quote - Unsuccessful response");
+        
+        $this->assertEquals( 500, $client->getResponse()->getStatusCode() );
 
     }
 

@@ -109,7 +109,7 @@ class QuoteController extends ApiController
     {
         $em = $this->getDoctrine()->getManager();
         $quote = new Quote();
-        $form = $this->get('form.factory')->createNamed( null, QuoteFormType::class, $quote );
+        $form = $this->get('form.factory')->createNamed( null, QuoteFormType::class, $quote, array('csrf_protection' => false) );
         $form->handleRequest($request);
 
         if ($form->isValid()) {

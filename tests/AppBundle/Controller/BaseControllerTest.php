@@ -19,6 +19,9 @@ class BaseControllerTest extends WebTestCase
         $this->faker = $container->get('faker.generator');
 
         $this->fixtures = $this->loadFixtures([
+            'AppBundle\DataFixtures\ORM\PermissionFixture',
+            'AppBundle\DataFixtures\ORM\PermissionGroupFixture',
+            'AppBundle\DataFixtures\ORM\UserFixture',
             'AppBundle\DataFixtures\ORM\AuthorFixture',
             'AppBundle\DataFixtures\ORM\QuoteFixture',
         ])->getReferenceRepository();
@@ -27,6 +30,16 @@ class BaseControllerTest extends WebTestCase
     protected function writeLn($string)
     {
         fwrite(STDERR, print_r($string."\n", true));
+    }
+
+    protected function getApiUserKey() {
+        return [
+            'apikey' => $this->getApiKey(),
+        ];
+    }
+
+    protected function getApiKey() {
+        return $this->fixtures->getReference('api-user')->getApiKey();
     }
 
 
