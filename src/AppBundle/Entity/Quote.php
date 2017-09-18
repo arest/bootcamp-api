@@ -7,7 +7,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\QuoteRepository")
  * @ORM\Table(name="quote")
  */
 class Quote
@@ -23,6 +23,8 @@ class Quote
     /**
      * @ORM\ManyToOne(targetEntity="Author", inversedBy="quotes", cascade={"persist"})
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id", onDelete="CASCADE")
+     * @Serializer\Groups({"list","details"})
+     * @Serializer\Expose
      */
     private $author;
 
