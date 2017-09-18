@@ -1,0 +1,355 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chec",
+				"checkerGo"
+			],
+			[
+				"us",
+				"usStates"
+			],
+			[
+				"php",
+				"php-fpm"
+			],
+			[
+				"volumes",
+				"volumes_from"
+			],
+			[
+				"exclu",
+				"excludeBoutique"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/config/parameters.yml",
+			"settings":
+			{
+				"buffer_size": 363,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/routing.yml",
+			"settings":
+			{
+				"buffer_size": 65,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/andrea/Sites/Viddyoze",
+		"/Users/andrea/Sites/Viddyoze/app",
+		"/Users/andrea/Sites/Viddyoze/app/config",
+		"/Users/andrea/Sites/Viddyoze/src",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller"
+	],
+	"file_history":
+	[
+		"/usr/local/etc/php/7.1/conf.d/ext-xdebug.ini",
+		"/etc/hosts",
+		"/usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf",
+		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/Block/_form_input_with_error.html.twig",
+		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/SalesOrder/summary.html.twig",
+		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/Block/_dialog_error.html.twig",
+		"/Users/andrea/Sites/alessi_in4out_core/app/config/config.yml",
+		"/Users/andrea/my.cnf",
+		"/Users/andrea/Sites/alessi_in4out_core/app/config/parameters.yml",
+		"/Users/andrea/.my.cnf",
+		"/etc/mysql/my.cnf",
+		"/usr/local/mysql/etc/my.cnf",
+		"/Users/andrea/Sites/alessi_in4out_core/.nvmrc",
+		"/Users/andrea/Sites/alessi_in4out_core/app/config/deploy.rb",
+		"/Users/andrea/Sites/molteni/web/js/sl2.js",
+		"/Users/andrea/Sites/molteni/app/config/config.yml",
+		"/Users/andrea/Sites/molteni/src/AppBundle/Controller/StoreController.php",
+		"/Users/andrea/Sites/molteni/src/AppBundle/Entity/Store.php",
+		"/Users/andrea/Sites/molteni/src/AppBundle/Repository/StoreRepository.php",
+		"/Users/andrea/Sites/caars/laradock-caars/.env",
+		"/Users/andrea/Sites/test.php",
+		"/Users/andrea/Sites/caars/laradock-caars/docker-compose.yml",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/fixtures/prizes.json",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/middleware/sagas.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/constants/actionTypes.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/reducers/prizes.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/action_creators.jsx",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/middleware/prizes.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/store/configureStore.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/components/prizes.js",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/_src/components/active.jsx",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/templates/html.tpl.php",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/all/themes/kindercustomercare/index.html",
+		"/Users/andrea/Sites/kinder_unattenzioneinpiu/cms/sites/default/settings.php",
+		"/Users/andrea/Sites/caars/laradock-caars/nginx/sites/default.conf",
+		"/Users/andrea/Sites/caars/laradock-caars/mysql/docker-entrypoint-initdb.d/createdb.sql",
+		"/Users/andrea/Sites/laradock-symfony/docker-compose.yml",
+		"/Users/andrea/Sites/laradock-symfony/.env",
+		"/Users/andrea/Sites/laradock-symfony/nginx/sites/default.conf",
+		"/Users/andrea/.unison",
+		"/Users/andrea/Downloads/cryptup-backup-andrearestellogmailcom.key",
+		"/Users/andrea/Sites/molteni/app/Resources/views/front/store/index.html.twig",
+		"/Users/andrea/Sites/molteni/app/Resources/views/front/store/results.html.twig",
+		"/Users/andrea/Sites/molteni/src/AppBundle/EventListener/LanguageListener.php",
+		"/etc/exports",
+		"/Users/andrea/d4m-nfs/etc/d4m-nfs-mounts.txt",
+		"/Users/andrea/Sites/monero-wallet/README.md",
+		"/Users/andrea/Sites/molteni/d4m-nfs-mounts.txt",
+		"/Users/andrea/Sites/molteni/.git/MERGE_MSG",
+		"/Users/andrea/d4m-nfs-mounts.txt",
+		"/Users/andrea/.zshrc",
+		"/Users/andrea/Sites/laradock-symfony/docker-compose.sync.yml",
+		"/Users/andrea/Sites/laradock-symfony/docker-sync.yml",
+		"/Users/andrea/.dinghy/preferences.yml",
+		"/Users/andrea/Sites/laradock-symfony/nginx/Dockerfile",
+		"/Users/andrea/Sites/laradock-symfony/.dinghy/preferences.yml",
+		"/Users/andrea/Sites/laradock-symfony/workspace/Dockerfile-71",
+		"/Users/andrea/Sites/laradock-symfony/websocket/Dockerfile",
+		"/Users/andrea/Sites/laradock-symfony/websocket/.dockerignore",
+		"/Users/andrea/Sites/laradock-symfony/websocket/index.js",
+		"/Users/andrea/Sites/laradock-symfony/websocket/package.json",
+		"/Users/andrea/Sites/laradock-symfony/rabbitmq-client/Dockerfile",
+		"/usr/local/etc/php/7.0/php.ini",
+		"/usr/local/etc/apache2/2.4/httpd.conf",
+		"/Users/andrea/Sites/phpinfo.php",
+		"/Users/andrea/Sites/proink/html/dev/tools/frontools/config/browser-sync.json",
+		"/Users/andrea/Sites/proink/html/app/design/frontend/Komlab/default/registration.php",
+		"/Users/andrea/Sites/proink/html/app/design/frontend/komlab/default/styles/blocks/_mixins.scss",
+		"/Users/andrea/Sites/proink/html/post-install.sh",
+		"/Users/andrea/Sites/proink/html/app/design/frontend/komlab/default/styles/blocks/_theme.scss"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/config/parameters.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/config/routing.yml",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 65,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "viddyoze.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"store",
+				"src/AppBundle/Entity/Store.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 718.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 349.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
