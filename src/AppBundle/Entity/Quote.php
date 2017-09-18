@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\QuoteRepository")
  * @ORM\Table(name="quote")
+ * @Serializer\ExclusionPolicy("all")
  */
 class Quote
 {

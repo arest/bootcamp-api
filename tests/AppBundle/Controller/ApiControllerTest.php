@@ -35,6 +35,10 @@ class ApiControllerTest extends WebTestCase
 
         $this->assertArrayHasKey('author', $data );
         $this->assertArrayHasKey('content', $data );
+        $this->assertArrayHasKey('firstName', $data['author'] );
+        $this->assertArrayHasKey('lastName', $data['author'] );
+        $this->assertArrayNotHasKey('email', $data['author'] );
 
     }
+
 }

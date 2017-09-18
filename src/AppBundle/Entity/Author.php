@@ -52,8 +52,6 @@ class Author
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=false)
-     * @Serializer\Groups({"list","details"})
-     * @Serializer\Expose
      */
     private $email;
 
@@ -64,8 +62,6 @@ class Author
      *   mappedBy="author",
      *   cascade={"persist", "remove"}
      * )
-     * @Serializer\Groups({"list","details"})
-     * @Serializer\Expose
      */
     private $quotes;
 
