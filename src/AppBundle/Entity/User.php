@@ -19,8 +19,51 @@ class User extends BaseUser
      */
     protected $id;
 
+
+    /**
+     * @ORM\ManyToMany(
+     *   targetEntity="AdminBundle\Entity\PermissionGroup",
+     *   cascade={"persist"}
+     * )
+     */
+    private $permissionGroups;
+
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * Add permissionGroup
+     *
+     * @param \AdminBundle\Entity\PermissionGroup $permissionGroup
+     *
+     * @return User
+     */
+    public function addPermissionGroup(\AdminBundle\Entity\PermissionGroup $permissionGroup)
+    {
+        $this->permissionGroups[] = $permissionGroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove permissionGroup
+     *
+     * @param \AdminBundle\Entity\PermissionGroup $permissionGroup
+     */
+    public function removePermissionGroup(\AdminBundle\Entity\PermissionGroup $permissionGroup)
+    {
+        $this->permissionGroups->removeElement($permissionGroup);
+    }
+
+    /**
+     * Get permissionGroups
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPermissionGroups()
+    {
+        return $this->permissionGroups;
     }
 }

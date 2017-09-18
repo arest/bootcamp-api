@@ -1,0 +1,159 @@
+<?php
+// src/AdminBundle/Entity/Permission.php
+
+namespace AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use AdminBundle\Entity\fieldsFromArray;
+
+/**
+ * @ORM\Entity()
+ * @ORM\Table(name="simple_admin_permission")
+ */
+class Permission
+{
+    use fieldsFromArray;
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="simple_array")
+     */
+    protected $routes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="PermissionGroup", inversedBy="permissions", cascade={"persist"})
+     */
+    protected $groups;    
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->groups = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName() ? $this->getName() : 'New';
+    }
+     
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Permission
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set routes
+     *
+     * @param array $routes
+     *
+     * @return Permission
+     */
+    public function setRoutes($routes)
+    {
+        $this->routes = $routes;
+
+        return $this;
+    }
+
+    /**
+     * Get routes
+     *
+     * @return array
+     */
+    public function getRoutes()
+    {
+        return $this->routes;
+    }
+
+    /**
+     * Add group
+     *
+     * @param \AdminBundle\Entity\PermissionGroup $group
+     *
+     * @return Permission
+     */
+    public function addGroup(\AdminBundle\Entity\PermissionGroup $group)
+    {
+        $this->groups[] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Remove group
+     *
+     * @param \AdminBundle\Entity\PermissionGroup $group
+     */
+    public function removeGroup(\AdminBundle\Entity\PermissionGroup $group)
+    {
+        $this->groups->removeElement($group);
+    }
+
+    /**
+     * Get groups
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Permission
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+}

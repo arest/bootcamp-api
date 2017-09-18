@@ -27,6 +27,8 @@ class UserFixture extends AbstractFixture implements OrderedFixtureInterface,Con
         $admin->setEmail('andrea.restello@gmail.com');
         $admin->setPlainPassword('admin');
         $admin->setRoles( array('ROLE_ADMIN') );
+        $admin->addPermissionGroup( $this->getReference('permission-group-all') );
+
         $manager->persist($admin);
         
 
@@ -38,6 +40,6 @@ class UserFixture extends AbstractFixture implements OrderedFixtureInterface,Con
 
     public function getOrder()
     {
-        return 10; // number in which order to load fixtures
+        return 30; // number in which order to load fixtures
     }
 }

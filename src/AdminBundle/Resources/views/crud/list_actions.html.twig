@@ -1,0 +1,20 @@
+<div class="btn-group pull-right">
+
+	<a href="{{ path('_app_crud_' ~ route_pattern ~ '_edit',{id:item.id}) }}" class="btn btn-primary ">
+		<span class="glyphicon glyphicon-pencil"></span> 
+	</a>
+
+	<a href="{{ path('_app_crud_' ~ route_pattern ~ '_remove',{id:item.id}) }}" class="btn btn-danger" onclick="return confirm('{{'admin.modal.delete.description'|trans({'%1%':item|className})|raw}}')">
+		<span class="glyphicon glyphicon-remove-sign"></span> 
+	</a>
+
+	{% for action in actions %}
+	<a 
+		href="{{ path('_app_crud_' ~ route_pattern ~ '_command',{ id:item.id, type: action.type }) }}" 
+		class="btn btn-default" 
+		title="{{ action.title|trans }}"> {{ action.title|trans }}
+		<span class="{{ action.icon }}"></span> 
+	</a>
+	{% endfor %}
+
+</div>

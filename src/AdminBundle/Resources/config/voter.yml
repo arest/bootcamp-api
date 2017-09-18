@@ -1,0 +1,6 @@
+services:
+    simple_admin.admin_voter:
+        class: AdminBundle\Security\Voter\AdminVoter
+        public: false
+        tags:
+            - { name: security.voter }

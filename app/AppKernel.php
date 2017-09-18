@@ -19,7 +19,11 @@ class AppKernel extends Kernel
             // External bundles
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
+            new AdminBundle\AdminBundle(),
             new AppBundle\AppBundle(),
         ];
 

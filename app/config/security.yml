@@ -3,7 +3,9 @@
 security:
 
     encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
         FOS\UserBundle\Model\UserInterface: bcrypt
+
 
     role_hierarchy:
         ROLE_API:         ROLE_USER
@@ -14,6 +16,12 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: admin
+                        roles: 'ROLE_ADMIN'
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -21,29 +29,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main:
+        admin:
+            pattern:   ^/admin(.*)
             anonymous: ~
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+            http_basic: ~
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
-
-        admin:
-            pattern:   ^/admin(.*)
-            anonymous:    true
-            logout:       true
-            form_login:
-                provider:       fos_userbundle
-                csrf_token_generator: security.csrf.token_manager
-                login_path:     _app_admin_login
-                check_path:     _app_admin_login_check
-                use_forward:    false
-                failure_path:   ~
-                default_target_path: _app_admin_dashboard
-                use_referer: false
 
 
     access_control:

@@ -1,0 +1,11 @@
+parameters: ~
+services:
+
+    simple_admin.filter.bag:
+        class: AdminBundle\EventListener\FilterBag
+
+    simple_admin.filter.listener:
+          class:     AdminBundle\EventListener\FilterListener
+          arguments: ["@simple_admin.filter.bag","%simple_admin.pagination.per_page%"]
+          tags:
+              -   { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 12 }

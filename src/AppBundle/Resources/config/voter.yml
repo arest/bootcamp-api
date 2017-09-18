@@ -1,0 +1,8 @@
+services:
+    app.admin_voter:
+        class: AppBundle\Security\Voter\RoutePermissionVoter
+        arguments: ['@security.access.decision_manager']
+        tags:
+            - { name: security.voter }
+        # small performance boost
+        public: false

@@ -1,0 +1,5 @@
+services:
+    app.twig.inflector.extension:
+          class: AdminBundle\Twig\Extension\InflectorExtension
+          tags:
+              - { name: twig.extension }

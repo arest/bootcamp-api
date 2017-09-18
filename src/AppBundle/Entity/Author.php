@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,6 +44,11 @@ class Author
     private $lastName;
 
     /**
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = false
+     * )
+     *
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=false)
@@ -69,6 +75,18 @@ class Author
     public function __construct()
     {
         $this->quotes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * __toString
+     */
+    public function __toString()
+    {
+        return $this->getFullName();
+    }
+
+    public function getFullName() {
+        return $this->getFirstName().' '.$this->getLastName();
     }
 
     /**
