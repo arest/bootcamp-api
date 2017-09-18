@@ -25,7 +25,6 @@ class QuoteControllerTest extends BaseControllerTest
 
     }
 
-
     
     public function testGetOneSuccess()
     {
