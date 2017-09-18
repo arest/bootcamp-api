@@ -20,6 +20,7 @@ class UserFixture extends AbstractFixture implements OrderedFixtureInterface,Con
 
     public function load(ObjectManager $manager)
     {
+        $faker = \Faker\Factory::create();
 
         $admin = new User();
         $admin->setUsername('admin');
@@ -28,13 +29,25 @@ class UserFixture extends AbstractFixture implements OrderedFixtureInterface,Con
         $admin->setPlainPassword('admin');
         $admin->setRoles( array('ROLE_ADMIN') );
         $admin->addPermissionGroup( $this->getReference('permission-group-all') );
+        $admin->setApiKey(  '4382048328432084932s' );
 
         $manager->persist($admin);
         
 
+        $user = new User();
+        $user->setUsername('apiuser');
+        $user->setEnabled(1);
+        $user->setEmail('andrea_restello@yahoo.it');
+        $user->setPlainPassword('user');
+        $user->setRoles( array('ROLE_API') );
+        $user->setApiKey(  '123456789abcdefghilmnopqrstuvz' );
+
+        $manager->persist($user);
+
         $manager->flush();
 
         $this->addReference('admin-user', $admin);
+        $this->addReference('api-user', $user);
 
     }
 

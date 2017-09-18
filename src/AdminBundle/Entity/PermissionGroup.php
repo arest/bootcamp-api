@@ -4,7 +4,6 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AdminBundle\Entity\fieldsFromArray;
 
 /**
  * @ORM\Entity()
@@ -12,7 +11,6 @@ use AdminBundle\Entity\fieldsFromArray;
  */
 class PermissionGroup
 {
-    use fieldsFromArray;
     
     /**
      * @ORM\Id

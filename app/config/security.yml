@@ -16,6 +16,8 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
+        api_key_user_provider:
+            id: AppBundle\Security\ApiKeyUserProvider
         in_memory:
             memory:
                 users:
@@ -29,6 +31,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        main:
+            pattern: ^/api
+            stateless: true
+            simple_preauth:
+                authenticator: AppBundle\Security\ApiKeyAuthenticator
+            provider: api_key_user_provider
         admin:
             pattern:   ^/admin(.*)
             anonymous: ~
@@ -47,3 +55,4 @@ security:
         - { path: ^/admin/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/api, roles: ROLE_API }

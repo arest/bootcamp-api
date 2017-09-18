@@ -28,6 +28,14 @@ class User extends BaseUser
      */
     private $permissionGroups;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apiKey", type="string", length=255, nullable=false)
+     */
+    private $apiKey;
+
+
     public function __construct()
     {
         parent::__construct();
@@ -65,5 +73,29 @@ class User extends BaseUser
     public function getPermissionGroups()
     {
         return $this->permissionGroups;
+    }
+
+    /**
+     * Set apiKey
+     *
+     * @param string $apiKey
+     *
+     * @return User
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+
+        return $this;
+    }
+
+    /**
+     * Get apiKey
+     *
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
     }
 }
