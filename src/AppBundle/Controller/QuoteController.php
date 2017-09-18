@@ -121,5 +121,29 @@ class QuoteController extends ApiController
         return $this->view( $this->handleForm($form), 400);
     }
 
+
+    /**
+     * Update quote
+     * @Method("PUT")
+     * @View(serializerGroups={"details"})
+     * @Route("/{id}", name="_api_quote_update", options={"expose"=true})
+     * @RequestParam(name="author", description="Buy Now", strict=false)
+     * @RequestParam(name="content", description="Auction", strict=false)
+     */
+    public function updateAction(Quote $quote)
+    {
+        $form = $this->get('form.factory')->createNamed( null, QuoteFormType::class, $quote );
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($quote);
+            $em->flush();
+        }
+
+        return $this->view($quote, 202);
+
+    }
+
 }
 

@@ -111,4 +111,27 @@ class QuoteControllerTest extends BaseControllerTest
         $this->assertCount(100, $data );
     }
 
+
+    public function testUpdateSuccess()
+    {
+        $apiKey = $this->getApiUserKey();
+        
+        $client = static::createClient(array('test',true));
+        $quote = $this->fixtures->getReference('quote-1');
+
+        $formData = array(
+            'content' => 'Test 123',
+        );
+
+        $crawler = $client->request('PUT', '/api/quote/'.$quote->getId(), null, null, null, json_encode($formData) );
+
+        $this->writeLn("Api Quote Update - Successful response");
+
+        $data = json_decode( $client->getResponse()->getContent(), true);
+
+        $this->assertEquals( 202, $client->getResponse()->getStatusCode() );
+
+        $this->assertEquals( $data['content'], 'Test 123' );
+    }
+
 }
