@@ -96,4 +96,19 @@ class QuoteControllerTest extends BaseControllerTest
 
     }
 
+
+    public function testListSuccess()
+    {
+        $client = static::createClient();
+        $apiKey = $this->getApiUserKey();
+
+        $crawler = $client->request('GET', '/api/quote/list', $apiKey );
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $data = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(100, $data );
+    }
+
 }

@@ -45,6 +45,16 @@ class QuoteRepositoryTest extends WebTestCase
     }
 
 
+    public function testGetAll()
+    {
+        $items = $this->em
+            ->getRepository('AppBundle:Quote')
+            ->getAll()
+        ;
+
+        $this->assertCount( 100, $items );
+    }
+
 
     /**
      * {@inheritDoc}

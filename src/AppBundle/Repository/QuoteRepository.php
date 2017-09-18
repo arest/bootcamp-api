@@ -17,7 +17,8 @@ class QuoteRepository extends EntityRepository
         ;
     }
 
-    public function getRandom() {
+    public function getRandom() 
+    {
     	return $this->getBaseQueryBuilder()
                 ->select('q, a')
                 ->addSelect('RAND() as HIDDEN rand')
@@ -26,6 +27,15 @@ class QuoteRepository extends EntityRepository
             	->getQuery()
             	->getOneOrNullResult()
          ;
+    }
+
+    public function getAll() 
+    {
+        return $this->getBaseQueryBuilder()
+                ->select('q, a')
+                ->leftJoin( 'q.author', 'a')
+                ->getQuery()
+                ->getResult();           
     }
     
 }
