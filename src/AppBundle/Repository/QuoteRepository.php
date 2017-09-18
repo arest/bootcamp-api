@@ -3,7 +3,6 @@ namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
 
 use AppBundle\Entity\Quote;
 
@@ -16,6 +15,16 @@ class QuoteRepository extends EntityRepository
         return $this
                 ->createQueryBuilder($entityAlias)
         ;
+    }
+
+    public function getRandom() {
+    	return $this->getBaseQueryBuilder()
+                ->select($entityAlias.', a')
+                ->addSelect('RAND() as HIDDEN rand')
+                ->leftJoin( 'q.author', 'a')
+            	->getQuery()
+            	->getOneOrNullResult()
+         ;
     }
     
 }
