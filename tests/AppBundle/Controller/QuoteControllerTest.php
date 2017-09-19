@@ -112,6 +112,24 @@ class QuoteControllerTest extends BaseControllerTest
     }
 
 
+    public function testListWithFilterSuccess()
+    {
+        $author = $this->fixtures->getReference('author-1');
+
+        $client = static::createClient();
+        $params = $this->getApiUserKey();
+
+        $params['author_id'] = $author->getId();
+
+        $crawler = $client->request('GET', '/api/quote/list', $params );
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $data = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertGreaterThan(0, $data );
+    }
+
     public function testUpdateSuccess()
     {
         $apiKey = $this->getApiKey();

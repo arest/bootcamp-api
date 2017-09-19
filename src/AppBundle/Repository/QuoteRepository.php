@@ -29,12 +29,18 @@ class QuoteRepository extends EntityRepository
          ;
     }
 
-    public function getAll() 
+    public function getAll($filters) 
     {
-        return $this->getBaseQueryBuilder()
+        $qb = $this->getBaseQueryBuilder()
                 ->select('q, a')
                 ->leftJoin( 'q.author', 'a')
-                ->getQuery()
+        ;
+
+        if (isset($filter['author_id'])) {
+            $qb->andWhere( $qb->expr()->eq( 'a.id', $qb->expr()->literal( $filters['author_id'] ) ) );
+        }
+
+        return $qb->getQuery()
                 ->getResult();           
     }
     

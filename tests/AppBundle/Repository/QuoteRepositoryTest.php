@@ -56,6 +56,21 @@ class QuoteRepositoryTest extends WebTestCase
     }
 
 
+
+    public function testGetAllWithAuthorFilter()
+    {
+        $author = $this->fixtures->getReference('author-1');
+
+        $items = $this->em
+            ->getRepository('AppBundle:Quote')
+            ->getAll( [
+                'author_id' => $author->getId(),
+            ])
+        ;
+
+        $this->assertGreaterThan( 0, $items ); // This can fail ...
+    }
+
     /**
      * {@inheritDoc}
      */

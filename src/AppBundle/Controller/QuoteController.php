@@ -66,9 +66,9 @@ class QuoteController extends ApiController
      * @SWG\Tag(name="list")
      * )
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $results = $this->get('app.repository.quote')->getAll();
+        $results = $this->get('app.repository.quote')->getAll( $request->query->all() );
         return $this->view( $results, 200 );
     }
 
