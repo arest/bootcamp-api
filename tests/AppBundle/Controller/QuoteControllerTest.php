@@ -114,16 +114,18 @@ class QuoteControllerTest extends BaseControllerTest
 
     public function testUpdateSuccess()
     {
-        $apiKey = $this->getApiUserKey();
+        $apiKey = $this->getApiKey();
         
         $client = static::createClient(array('test',true));
         $quote = $this->fixtures->getReference('quote-1');
+        $author = $this->fixtures->getReference('author-1');
 
         $formData = array(
+            'author' => $author->getId(),
             'content' => 'Test 123',
         );
 
-        $crawler = $client->request('PUT', '/api/quote/'.$quote->getId(), null, null, null, json_encode($formData) );
+        $crawler = $client->request('PUT', '/api/quote/'.$quote->getId().'?apikey='.$apiKey, $formData, [], []  );
 
         $this->writeLn("Api Quote Update - Successful response");
 
@@ -132,6 +134,10 @@ class QuoteControllerTest extends BaseControllerTest
         $this->assertEquals( 202, $client->getResponse()->getStatusCode() );
 
         $this->assertEquals( $data['content'], 'Test 123' );
+        $this->assertEquals( $data['author']['lastName'], $author->getLastName() );
+
     }
+
+
 
 }

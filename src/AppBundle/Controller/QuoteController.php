@@ -130,18 +130,25 @@ class QuoteController extends ApiController
      * @RequestParam(name="author", description="Buy Now", strict=false)
      * @RequestParam(name="content", description="Auction", strict=false)
      */
-    public function updateAction(Quote $quote)
+    public function updateAction(Quote $quote, Request $request)
     {
-        $form = $this->get('form.factory')->createNamed( null, QuoteFormType::class, $quote );
+        $form = $this->get('form.factory')->createNamed( null, QuoteFormType::class, $quote, [
+            'method' => 'PUT',
+            'csrf_protection' => false,
+        ]);
+
+
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($quote);
             $em->flush();
+            return $this->view($quote, 202);
+
         }
 
-        return $this->view($quote, 202);
+        return $this->view( $this->handleForm($form), 400);
 
     }
 
