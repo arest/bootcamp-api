@@ -139,5 +139,23 @@ class QuoteControllerTest extends BaseControllerTest
     }
 
 
+    public function testDeleteSuccess()
+    {
+        $apiKey = $this->getApiKey();
+        $quote = $this->fixtures->getReference('quote-1');
+
+        $client = static::createClient(array('test',true));
+
+        $crawler = $client->request('DELETE', '/api/quote/'.$quote->getId().'?apikey='.$apiKey );
+
+        $this->writeLn("Api Quote Delete - Successful response");
+
+        $data = json_decode( $client->getResponse()->getContent(), true);
+
+        $this->assertEquals( 202, $client->getResponse()->getStatusCode() );
+
+
+    }
+
 
 }

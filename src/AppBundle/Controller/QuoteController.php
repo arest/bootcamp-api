@@ -152,5 +152,21 @@ class QuoteController extends ApiController
 
     }
 
+    /**
+     * Remove quote
+     * @Method("DELETE")
+     * @Route("/{id}", name="_api_quote_delete", options={"expose"=true})
+     * @RequestParam(name="id", description="Quote id", strict=true)
+     * @View(serializerGroups={"details"},serializerEnableMaxDepthChecks=true)
+     */
+    public function deleteAction(Quote $quote)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($quote);
+        $em->flush();
+        
+        return $this->view( $quote, 202 );
+    }
+
 }
 
