@@ -71,7 +71,7 @@ class QuoteController extends ApiController
         $results = $this->get('app.repository.quote')->getAll( $request->query->all() );
         $total = $this->get('app.repository.quote')->getTotal();
 
-        return $this->list( $results );
+        return $this->list( $results, $total );
     }
 
     /**
