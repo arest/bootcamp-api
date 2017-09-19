@@ -53,7 +53,7 @@ class QuoteController extends ApiController
      * Get quote list
      *
      * @Method("GET")
-     * @Route("/list", name="_api_quote_list", options={"expose"=true})
+     * @Route("", name="_api_quote_list", options={"expose"=true})
      * @View(serializerGroups={"list"})
      * @SWG\Response(
      *     response=200,

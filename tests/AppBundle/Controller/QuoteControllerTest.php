@@ -102,7 +102,7 @@ class QuoteControllerTest extends BaseControllerTest
         $client = static::createClient();
         $apiKey = $this->getApiUserKey();
 
-        $crawler = $client->request('GET', '/api/quote/list', $apiKey );
+        $crawler = $client->request('GET', '/api/quote', $apiKey );
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
