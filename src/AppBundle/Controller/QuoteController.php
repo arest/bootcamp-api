@@ -31,13 +31,13 @@ class QuoteController extends ApiController
      *
      * @Method("GET")
      * @Route("/random", name="_api_quote_random", options={"expose"=true})
-     * @View(serializerGroups={"details"})
+     * @View(serializerGroups={"wp_front"})
      * @SWG\Response(
      *     response=200,
      *     description="Returns a random quote",
      *     @SWG\Schema(
      *         type="object",
-     *         @Model(type=Quote::class, groups={"details"})
+     *         @Model(type=Quote::class, groups={"wp_front"})
      *     )
      * )
      * @SWG\Tag(name="random")

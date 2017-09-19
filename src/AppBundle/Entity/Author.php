@@ -20,6 +20,8 @@ class Author
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"list","details"})
+     * @Serializer\Expose
      */
     protected $id;
 
@@ -27,7 +29,7 @@ class Author
      * @var string
      *
      * @ORM\Column(name="first_name", type="string", length=255, nullable=false)
-     * @Serializer\Groups({"list","details"})
+     * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
      * @Serializer\SerializedName("firstName")
      */
@@ -37,9 +39,9 @@ class Author
      * @var string
      *
      * @ORM\Column(name="last_name", type="string", length=255, nullable=false)
-     * @Serializer\Groups({"list","details"})
+     * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
-     * @Serializer\SerializedName("lastName")
+     * @Serializer\SerializedName("lastName",)
      */
     private $lastName;
 
@@ -52,6 +54,8 @@ class Author
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @Serializer\Groups({"list","details"})
+     * @Serializer\Expose
      */
     private $email;
 

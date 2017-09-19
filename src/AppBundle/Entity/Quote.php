@@ -26,7 +26,7 @@ class Quote
     /**
      * @ORM\ManyToOne(targetEntity="Author", inversedBy="quotes", cascade={"persist"})
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id", onDelete="CASCADE")
-     * @Serializer\Groups({"list","details","wp"})
+     * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
      */
     private $author;
@@ -35,7 +35,7 @@ class Quote
      * @var string
      *
      * @ORM\Column(name="content", type="text", nullable=false)
-     * @Serializer\Groups({"list","details","wp"})
+     * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
      */
     private $content;
