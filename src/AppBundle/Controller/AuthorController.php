@@ -44,10 +44,10 @@ class AuthorController extends ApiController
      * @SWG\Tag(name="list")
      * )
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $results = $this->get('app.repository.author')->findAll();
-        return $this->view( $results, 200 );
+        $results = $this->get('app.repository.author')->getAll( $request->query->all() );
+        return $this->list( $results );
     }
 
     /**

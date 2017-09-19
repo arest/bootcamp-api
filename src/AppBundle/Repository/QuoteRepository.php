@@ -6,7 +6,7 @@ use Doctrine\ORM\QueryBuilder;
 
 use AppBundle\Entity\Quote;
 
-class QuoteRepository extends EntityRepository
+class QuoteRepository extends FilterRepository
 {
 
     public function getBaseQueryBuilder( $entityAlias = 'q')
@@ -36,6 +36,8 @@ class QuoteRepository extends EntityRepository
                 ->leftJoin( 'q.author', 'a')
         ;
 
+        $qb = $this->filterAndSort( $filters, $qb );
+        
         if (isset($filter['author_id'])) {
             $qb->andWhere( $qb->expr()->eq( 'a.id', $qb->expr()->literal( $filters['author_id'] ) ) );
         }

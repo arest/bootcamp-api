@@ -5,6 +5,8 @@ namespace AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormEvent;
 
 class QuoteFormType extends AbstractType
 {
@@ -13,6 +15,17 @@ class QuoteFormType extends AbstractType
     {
 
 		$builder
+
+            ->add('id', null, array(
+                'label' => 'ID',
+                'mapped' => false,
+            ))
+
+
+            ->add('authorId', null, array(
+                'label' => 'ID',
+                'mapped' => false,
+            ))
 
             ->add('author', null, array(
                 'label' => 'admin.crud.form.author',
@@ -24,6 +37,17 @@ class QuoteFormType extends AbstractType
                 'required' => true,
             ))
         ;
+
+        $builder->addEventListener(
+            FormEvents::PRE_SUBMIT,
+            function (FormEvent $event) {
+                $data = $event->getData();
+                if (isset($data['authorId'])) {
+                    $data['author'] = $data['authorId'];
+                    unset($data['authorId']);
+                }
+                $event->setData($data);
+        });
     }
 
 	/**

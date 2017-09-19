@@ -14,6 +14,11 @@ class AuthorFormType extends AbstractType
 
 		$builder
 
+            ->add('id', null, array(
+                'label' => 'ID',
+                'mapped' => false,
+            ))
+
             ->add('email', null, array(
                 'label' => 'admin.crud.form.email',
                 'required' => true,

@@ -41,6 +41,18 @@ class Quote
     private $content;
 
 
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("authorId")
+     * @Serializer\Groups({"list","details"})
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getAuthorId() 
+    {
+        return $this->author ? $this->author->getId() : null;
+    }
+
 
     /**
      * Get id
