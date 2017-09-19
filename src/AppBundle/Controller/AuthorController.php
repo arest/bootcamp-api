@@ -47,7 +47,8 @@ class AuthorController extends ApiController
     public function listAction(Request $request)
     {
         $results = $this->get('app.repository.author')->getAll( $request->query->all() );
-        return $this->list( $results );
+        $total = $this->get('app.repository.author')->getTotal();
+        return $this->list( $results, $total );
     }
 
     /**

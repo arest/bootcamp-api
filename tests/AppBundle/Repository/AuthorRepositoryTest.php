@@ -3,9 +3,9 @@ namespace Tests\AppBundle\Repository;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
-use AppBundle\Entity\Quote;
+use AppBundle\Entity\Author;
 
-class QuoteRepositoryTest extends WebTestCase
+class AuthorRepositoryTest extends WebTestCase
 {
     /**
      * @var \Doctrine\ORM\EntityManager
@@ -33,50 +33,41 @@ class QuoteRepositoryTest extends WebTestCase
         ))->getReferenceRepository();
     }
 
-    public function testGetRandom()
-    {
-        $item = $this->em
-            ->getRepository('AppBundle:Quote')
-            ->getRandom()
-        ;
-
-        $this->assertInstanceOf( Quote::class, $item );
-    }
-
 
     public function testGetAll()
     {
         $items = $this->em
-            ->getRepository('AppBundle:Quote')
+            ->getRepository('AppBundle:Author')
             ->getAll()
         ;
 
-        $this->assertCount( 100, $items );
+        $this->assertCount( 50, $items );
     }
 
 
     public function testGetTotal()
     {
         $result = $this->em
-            ->getRepository('AppBundle:Quote')
+            ->getRepository('AppBundle:Author')
             ->getTotal()
         ;
 
-        $this->assertEquals( 100, $result );
+        $this->assertEquals( 50, $result );
     }
 
-    public function testGetAllWithAuthorFilter()
+    public function testGetAllWithFilters()
     {
-        $author = $this->fixtures->getReference('author-1');
 
         $items = $this->em
-            ->getRepository('AppBundle:Quote')
+            ->getRepository('AppBundle:Author')
             ->getAll( [
-                'author_id' => $author->getId(),
+                '_start' => 0,
+                '_end' => 10,
+
             ])
         ;
 
-        $this->assertGreaterThan( 0, $items ); // This can fail ...
+        $this->assertCount( 10, $items );
     }
 
     /**

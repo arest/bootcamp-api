@@ -16,14 +16,14 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 abstract class ApiController extends FOSRestController
 {
-    protected function list( $result )
+    protected function list( $result, $total )
     {
 
         $groups = array('list');
 
         $view = $this->view($result, 200)
-                ->setHeader('X-Total-Count', count($result) )
-                ->setHeader('Content-Range', count($result) )
+                ->setHeader('X-Total-Count', $total )
+                ->setHeader('Content-Range', $total )
         ;
         $context = $view->getContext();
         $context->setSerializeNull(true);

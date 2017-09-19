@@ -20,11 +20,7 @@ class AuthorRepository extends FilterRepository
 
     public function getAll( $filters ) 
     {
-        $qb = $this->getBaseQueryBuilder()
-                ->select('a')
-                ->leftJoin( 'a.author', 'a')
-        ;
-
+        $qb = $this->getBaseQueryBuilder();
         $qb = $this->filterAndSort( $filters, $qb );
 
         return $qb->getQuery()

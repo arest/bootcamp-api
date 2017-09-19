@@ -22,4 +22,16 @@ abstract class FilterRepository extends EntityRepository
         return $qb;
     }
 
+
+    public function getTotal()
+    {
+        return $this->getBaseQueryBuilder('a')
+                ->select('COUNT(a.id)')
+                //->useQueryCache(true)
+                //->useResultCache(true, 3600)
+                ->getQuery()
+                ->getSingleScalarResult()
+        ;
+    }
+
 }
