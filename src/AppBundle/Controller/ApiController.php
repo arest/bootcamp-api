@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
+use FOS\RestBundle\Context\Context;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
@@ -15,6 +16,22 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 abstract class ApiController extends FOSRestController
 {
+    protected function list( $result )
+    {
+
+        $groups = array('list');
+
+        $view = $this->view($result, 200)
+                ->setHeader('X-Total-Count', count($result) )
+                ->setHeader('Content-Range', count($result) )
+        ;
+        $context = $view->getContext();
+        $context->setSerializeNull(true);
+        $context->setGroups($groups);
+        $view->setContext($context);
+
+        return $this->handleView($view);
+    }
 
     protected function getUser() 
     {

@@ -69,7 +69,8 @@ class QuoteController extends ApiController
     public function listAction(Request $request)
     {
         $results = $this->get('app.repository.quote')->getAll( $request->query->all() );
-        return $this->view( $results, 200 );
+
+        return $this->list( $results );
     }
 
     /**

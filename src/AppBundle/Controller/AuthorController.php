@@ -31,7 +31,7 @@ class AuthorController extends ApiController
      * Get author list
      *
      * @Method("GET")
-     * @Route("/list", name="_api_author_list", options={"expose"=true})
+     * @Route("", name="_api_author_list", options={"expose"=true})
      * @View(serializerGroups={"list"})
      * @SWG\Response(
      *     response=200,

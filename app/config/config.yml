@@ -131,5 +131,7 @@ nelmio_cors:
     paths:
         '^/api/':
             allow_origin: ['*']
-            allow_headers: ['*']
+            allow_headers: ['X-Apikey','Content-Type']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+            expose_headers: ['X-Total-Count', 'Content-Range']
+
