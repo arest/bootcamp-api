@@ -19,6 +19,11 @@ class ApiKeyAuthenticator implements SimplePreAuthenticatorInterface
         // look for an apikey query parameter
         $apiKey = $request->query->get('apikey');
 
+        // look for an apikey custom header
+        if ($request->headers->get('X-Apikey')) {
+            $apiKey = $request->headers->get('X-Apikey');
+        }
+
         // or if you want to use an "apikey" header, then do something like this:
         // $apiKey = $request->headers->get('apikey');
 
