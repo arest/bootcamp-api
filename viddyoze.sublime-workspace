@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"fitle",
+				"filters"
+			],
+			[
+				"api",
+				"apiKey"
+			],
+			[
 				"chec",
 				"checkerGo"
 			],
@@ -27,23 +35,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/config/parameters.yml",
-			"settings":
-			{
-				"buffer_size": 363,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/config/routing.yml",
-			"settings":
-			{
-				"buffer_size": 65,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -90,13 +81,78 @@
 		"/Users/andrea/Sites/Viddyoze/app/config",
 		"/Users/andrea/Sites/Viddyoze/src",
 		"/Users/andrea/Sites/Viddyoze/src/AppBundle",
-		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller"
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Entity",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Repository",
+		"/Users/andrea/Sites/Viddyoze/tests"
 	],
 	"file_history":
 	[
-		"/usr/local/etc/php/7.1/conf.d/ext-xdebug.ini",
+		"/Users/andrea/Sites/Viddyoze/tests/AppBundle/Controller/QuoteControllerTest.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Form/Type/AuthorFormType.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Form/Type/QuoteFormType.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller/QuoteController.php",
+		"/Users/andrea/Sites/Viddyoze/tests/AppBundle/Repository/AuthorRepositoryTest.php",
+		"/Users/andrea/Sites/Viddyoze/tests/AppBundle/Repository/QuoteRepositoryTest.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller/AuthorController.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Repository/AuthorRepository.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Repository/QuoteRepository.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Repository/FilterRepository.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller/ApiController.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Entity/Quote.php",
+		"/Users/andrea/Sites/Viddyoze/app/config/config.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Security/ApiKeyAuthenticator.php",
+		"/Users/andrea/Sites/Viddyoze/tests/AppBundle/Controller/AuthorControllerTest.php",
+		"/Users/andrea/Sites/Viddyoze/web/app_dev.php",
+		"/Users/andrea/Sites/Viddyoze/app/AppKernel.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Entity/Author.php",
+		"/Users/andrea/Sites/Viddyoze/phpunit.xml",
 		"/etc/hosts",
 		"/usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf",
+		"/Users/andrea/Sites/Viddyoze/README.md",
+		"/Users/andrea/Sites/Viddyoze/tests/AppBundle/Controller/BaseControllerTest.php",
+		"/Users/andrea/Sites/Viddyoze/app/config/config_test.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Security/ApiKeyUserProvider.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM/QuoteFixture.php",
+		"/Users/andrea/Sites/Viddyoze/app/config/services.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Entity/Permission.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Entity/User.php",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Entity/fieldsArray.php",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Entity/PermissionGroup.php",
+		"/Users/andrea/Sites/Viddyoze/app/config/security.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM/UserFixture.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DQL/RandFunction.php",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Security/Voter/AdminVoter.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Security/Voter/RoutePermissionVoter.php",
+		"/Users/andrea/Sites/Viddyoze/app/config/routing.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Resources/translations/AdminBundle.en.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Menu/AdminBuilder.php",
+		"/Users/andrea/Sites/Viddyoze/app/Resources/translations/messages.en.yml",
+		"/Users/andrea/Sites/Viddyoze/composer.json",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Resources/translations/AdminBundle.it.yml",
+		"/Users/andrea/Sites/Viddyoze/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DependencyInjection/AppExtension.php",
+		"/Users/andrea/Sites/Viddyoze/app/Resources/AdminBundle/views/dashboard.html.twig",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM/PermissionFixture.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM/PermissionGroupFixture.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/DataFixtures/ORM/AuthorFixture.php",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Resources/views/common/navbar.html.twig",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Controller/SecurityController.php",
+		"/Users/andrea/Sites/Viddyoze/app/Resources/AdminBundle/translations/AdminBundle.en.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Resources/config/voter.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/Resources/views/layout.html.twig",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Controller/AdminController.php",
+		"/Users/andrea/Sites/Viddyoze/src/AdminBundle/AdminBundle.php",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Resources/config/controller.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Resources/config/form.yml",
+		"/Users/andrea/Sites/Viddyoze/src/AppBundle/Resources/config/repository.yml",
+		"/Users/andrea/Sites/Viddyoze/app/config/parameters.yml",
+		"/Users/andrea/Sites/Viddyoze/app/config/config_dev.yml",
+		"/Users/andrea/Sites/Viddyoze/.gitignore",
+		"/Users/andrea/Sites/Viddyoze/viddyoze.sublime-project",
+		"/usr/local/etc/php/7.1/conf.d/ext-xdebug.ini",
 		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/Block/_form_input_with_error.html.twig",
 		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/SalesOrder/summary.html.twig",
 		"/Users/andrea/Sites/alessi_in4out_core/src/Alessi/SiteBundle/Resources/views/Block/_dialog_error.html.twig",
@@ -161,13 +217,11 @@
 		"/Users/andrea/Sites/phpinfo.php",
 		"/Users/andrea/Sites/proink/html/dev/tools/frontools/config/browser-sync.json",
 		"/Users/andrea/Sites/proink/html/app/design/frontend/Komlab/default/registration.php",
-		"/Users/andrea/Sites/proink/html/app/design/frontend/komlab/default/styles/blocks/_mixins.scss",
-		"/Users/andrea/Sites/proink/html/post-install.sh",
-		"/Users/andrea/Sites/proink/html/app/design/frontend/komlab/default/styles/blocks/_theme.scss"
+		"/Users/andrea/Sites/proink/html/app/design/frontend/komlab/default/styles/blocks/_mixins.scss"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -178,9 +232,48 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"pagina",
+			"SerializationContext",
+			"quote",
+			"Quote",
+			"quote",
+			"paramFetcher",
+			"ParamFetcher",
+			"getAuthor",
+			"user",
+			"UploadedFile",
+			"fromArray",
+			"fieldsFromArray",
+			"user",
+			"User",
+			"user",
+			"User",
+			"user",
+			"ADMIN",
+			"admin",
+			"onAuthenticationFailure",
+			"QuoteFormType",
+			"RequestParam",
+			"Quote",
+			"AbstractType",
+			"FormBuilderInterface",
+			"OptionsResolver",
+			"EntityType",
+			"EntityRepository",
+			"ArrayCollection",
+			"auction",
+			"Auction",
+			"getSupportedUser",
+			"Nome",
+			"author",
+			"auction",
+			"GenericEvent",
+			"author",
+			"admin",
+			"true"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -198,67 +291,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/config/parameters.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 363,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/config/routing.yml",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 65,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -294,6 +328,10 @@
 	},
 	"menu_visible": true,
 	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
 	{
 		"height": 0.0
 	},
@@ -340,7 +378,42 @@
 	{
 		"xdebug":
 		{
-			"hide_conflict": false
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"18":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"40":
+				{
+					"group": 0,
+					"index": 1
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
 		}
 	},
 	"show_minimap": true,

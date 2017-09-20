@@ -23,6 +23,7 @@ class QuoteRepository extends FilterRepository
                 ->select('q, a')
                 ->addSelect('RAND() as HIDDEN rand')
                 ->leftJoin( 'q.author', 'a')
+                ->orderBy('RAND()')
                 ->setMaxResults(1)
             	->getQuery()
             	->getOneOrNullResult()

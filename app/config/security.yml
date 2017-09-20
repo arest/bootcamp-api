@@ -30,7 +30,12 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+        
+        api_quote_random:
+            pattern:   ^/api/quote/random
+            security: false
+            anonymous: true
+            methods: [GET]
         main:
             pattern: ^/api
             stateless: true
