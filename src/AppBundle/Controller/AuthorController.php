@@ -41,7 +41,7 @@ class AuthorController extends ApiController
      *         @Model(type=Author::class, groups={"list"})
      *     )
      * )
-     * @SWG\Tag(name="list")
+     * @SWG\Tag(name="author")
      * )
      */
     public function listAction(Request $request)
@@ -65,7 +65,7 @@ class AuthorController extends ApiController
      *         @Model(type=Author::class, groups={"details"})
      *     )
      * )
-     * @SWG\Tag(name="list")
+     * @SWG\Tag(name="author")
      */
     public function getAction(Author $author)
     {   
@@ -86,7 +86,7 @@ class AuthorController extends ApiController
      *         @Model(type=Author::class, groups={"details"})
      *     )
      * )
-     * @SWG\Tag(name="list")
+     * @SWG\Tag(name="author")
      */
     public function getWithQuotesAction(Author $author)
     {   
@@ -102,6 +102,15 @@ class AuthorController extends ApiController
      * @RequestParam(name="firstName", description="First Name", strict=false)
      * @RequestParam(name="lastName", description="Last Name", strict=false)
      * @RequestParam(name="email", description="Email", strict=false)
+     * @SWG\Response(
+     *     response=200,
+     *     description="Create new author",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Author::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="author")
      */
     public function createAction(Request $request)
     {
@@ -128,6 +137,15 @@ class AuthorController extends ApiController
      * @RequestParam(name="firstName", description="First Name", strict=false)
      * @RequestParam(name="lastName", description="Last Name", strict=false)
      * @RequestParam(name="email", description="Email", strict=false)
+     * @SWG\Response(
+     *     response=202,
+     *     description="Update author",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Author::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="author")
      */
     public function updateAction(Author $author, Request $request)
     {
@@ -157,6 +175,15 @@ class AuthorController extends ApiController
      * @Route("/{id}", name="_api_author_delete", options={"expose"=true})
      * @RequestParam(name="id", description="Author id", strict=true)
      * @View(serializerGroups={"details"},serializerEnableMaxDepthChecks=true)
+     * @SWG\Response(
+     *     response=202,
+     *     description="Remove author",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Author::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="author")
      */
     public function deleteAction(Author $author)
     {

@@ -123,6 +123,11 @@ fos_rest:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
 
 nelmio_api_doc:
+    documentation:
+        info:
+            title: Bootcamp viddyoze
+            description: This is an awesome app!
+            version: 1.0.0
     routes:
         path_patterns: # an array of regexps
             - ^/api

@@ -40,7 +40,7 @@ class QuoteController extends ApiController
      *         @Model(type=Quote::class, groups={"wp_front"})
      *     )
      * )
-     * @SWG\Tag(name="random")
+     * @SWG\Tag(name="quote")
      * )
      */
     public function getRandomAction()
@@ -63,7 +63,7 @@ class QuoteController extends ApiController
      *         @Model(type=Quote::class, groups={"list"})
      *     )
      * )
-     * @SWG\Tag(name="list")
+     * @SWG\Tag(name="quote")
      * )
      */
     public function listAction(Request $request)
@@ -88,7 +88,7 @@ class QuoteController extends ApiController
      *         @Model(type=Quote::class, groups={"details"})
      *     )
      * )
-     * @SWG\Tag(name="list")
+     * @SWG\Tag(name="quote")
      */
     public function getAction($id)
     {   
@@ -106,6 +106,15 @@ class QuoteController extends ApiController
      * @Route("", name="_api_quote_create", options={"expose"=true})
      * @RequestParam(name="author_id", description="Author ID", strict=false)
      * @RequestParam(name="content", description="Content", strict=false)
+     * @SWG\Response(
+     *     response=201,
+     *     description="Create new quote",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Quote::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="quote")
      */
     public function createAction(Request $request)
     {
@@ -131,6 +140,15 @@ class QuoteController extends ApiController
      * @Route("/{id}", name="_api_quote_update", options={"expose"=true})
      * @RequestParam(name="author", description="Buy Now", strict=false)
      * @RequestParam(name="content", description="Auction", strict=false)
+     * @SWG\Response(
+     *     response=202,
+     *     description="Update quote",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Quote::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="quote")
      */
     public function updateAction(Quote $quote, Request $request)
     {
@@ -160,6 +178,15 @@ class QuoteController extends ApiController
      * @Route("/{id}", name="_api_quote_delete", options={"expose"=true})
      * @RequestParam(name="id", description="Quote id", strict=true)
      * @View(serializerGroups={"details"},serializerEnableMaxDepthChecks=true)
+     * @SWG\Response(
+     *     response=202,
+     *     description="Delete quote",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Quote::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="quote")
      */
     public function deleteAction(Quote $quote)
     {
