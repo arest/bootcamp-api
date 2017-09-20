@@ -3,7 +3,7 @@ namespace Tests\AppBundle\Controller;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
-class BaseControllerTest extends WebTestCase
+abstract class BaseControllerTest extends WebTestCase
 {
 
     protected $client = null;

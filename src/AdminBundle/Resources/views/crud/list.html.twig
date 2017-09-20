@@ -34,9 +34,9 @@
 
 <div class="box box-primary">
 	<div class="box-body">
-
+		{#
 		{% include 'AdminBundle:filters:search.html.twig' with {form:form_filters,action: path('_app_crud_' ~ route_pattern ~ '_list')} %}
-
+		#}
 		{% if items|length > 0 %}
 		<table class="table table-striped table-hover">
 			<thead>

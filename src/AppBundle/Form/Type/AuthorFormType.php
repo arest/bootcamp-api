@@ -14,10 +14,10 @@ class AuthorFormType extends AbstractType
 
 		$builder
 
-            ->add('id', null, array(
-                'label' => 'ID',
-                'mapped' => false,
-            ))
+            // ->add('id', null, array(
+            //     'label' => 'ID',
+            //     'mapped' => false,
+            // ))
 
             ->add('email', null, array(
                 'label' => 'admin.crud.form.email',
@@ -33,6 +33,7 @@ class AuthorFormType extends AbstractType
                 'required' => true,
             ))
         ;
+
     }
 
 	/**
@@ -43,6 +44,7 @@ class AuthorFormType extends AbstractType
         $resolver->setDefaults(array(
 			'data_class' => 'AppBundle\Entity\Author',
             'csrf_protection'   => true,
+            'allow_extra_fields' => true,
         ));
     }
 

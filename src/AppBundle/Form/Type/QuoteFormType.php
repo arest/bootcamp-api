@@ -16,17 +16,6 @@ class QuoteFormType extends AbstractType
 
 		$builder
 
-            ->add('id', null, array(
-                'label' => 'ID',
-                'mapped' => false,
-            ))
-
-
-            ->add('authorId', null, array(
-                'label' => 'ID',
-                'mapped' => false,
-            ))
-
             ->add('author', null, array(
                 'label' => 'admin.crud.form.author',
                 'required' => true,
@@ -58,6 +47,7 @@ class QuoteFormType extends AbstractType
         $resolver->setDefaults(array(
 			'data_class' => 'AppBundle\Entity\Quote',
             'csrf_protection'   => true,
+            'allow_extra_fields' => true,
         ));
     }
 
