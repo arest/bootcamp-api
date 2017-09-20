@@ -26,6 +26,7 @@ class Quote
     /**
      * @ORM\ManyToOne(targetEntity="Author", inversedBy="quotes", cascade={"persist"})
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id", onDelete="CASCADE")
+     * @Serializer\MaxDepth(1)
      * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
      */

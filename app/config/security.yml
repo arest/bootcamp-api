@@ -36,6 +36,13 @@ security:
             security: false
             anonymous: true
             methods: [GET]
+
+        api_author_quotes:
+            pattern:   ^/api/author/(.*)/quotes
+            security: false
+            anonymous: true
+            methods: [GET]
+
         main:
             pattern: ^/api
             stateless: true

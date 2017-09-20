@@ -56,7 +56,7 @@ class AuthorController extends ApiController
      *
      * @Method("GET")
      * @Route("/{id}", name="_api_author_get", options={"expose"=true})
-     * @View(serializerGroups={"details"})
+     * @View(serializerGroups={"details"}, serializerEnableMaxDepthChecks=true )
      * @SWG\Response(
      *     response=200,
      *     description="Returns a author details",
@@ -67,14 +67,31 @@ class AuthorController extends ApiController
      * )
      * @SWG\Tag(name="list")
      */
-    public function getAction($id)
+    public function getAction(Author $author)
     {   
-        $item = $this->get('app.repository.author')->find( $id );
-
-        return $this->view( $item, 200 );
+        return $this->view( $author, 200 );
     }
 
-
+    /**
+     * Get author details
+     *
+     * @Method("GET")
+     * @Route("/{id}/quotes", name="_api_author_get_with_quotes", options={"expose"=true})
+     * @View(serializerGroups={"wp_front"} )
+     * @SWG\Response(
+     *     response=200,
+     *     description="Returns a author details",
+     *     @SWG\Schema(
+     *         type="object",
+     *         @Model(type=Author::class, groups={"details"})
+     *     )
+     * )
+     * @SWG\Tag(name="list")
+     */
+    public function getWithQuotesAction(Author $author)
+    {   
+        return $this->view( $author, 200 );
+    }
 
     /**
      * Create a new author

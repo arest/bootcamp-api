@@ -140,7 +140,7 @@ class QuoteControllerTest extends BaseControllerTest
 
         $params['author_id'] = $author->getId();
 
-        $crawler = $client->request('GET', '/api/quote/list', $params );
+        $crawler = $client->request('GET', '/api/quote', $params );
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 

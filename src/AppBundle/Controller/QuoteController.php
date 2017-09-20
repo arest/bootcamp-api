@@ -31,7 +31,7 @@ class QuoteController extends ApiController
      *
      * @Method("GET")
      * @Route("/random", name="_api_quote_random", options={"expose"=true})
-     * @View(serializerGroups={"wp_front"})
+     * @View(serializerGroups={"wp_front"}, serializerEnableMaxDepthChecks=true)
      * @SWG\Response(
      *     response=200,
      *     description="Returns a random quote",
@@ -54,7 +54,7 @@ class QuoteController extends ApiController
      *
      * @Method("GET")
      * @Route("", name="_api_quote_list", options={"expose"=true})
-     * @View(serializerGroups={"list"})
+     * @View(serializerGroups={"list"}, serializerEnableMaxDepthChecks=true)
      * @SWG\Response(
      *     response=200,
      *     description="Returns the quote list",
@@ -79,7 +79,7 @@ class QuoteController extends ApiController
      *
      * @Method("GET")
      * @Route("/{id}", name="_api_quote_get", options={"expose"=true})
-     * @View(serializerGroups={"details"})
+     * @View(serializerGroups={"details"}, serializerEnableMaxDepthChecks=true)
      * @SWG\Response(
      *     response=200,
      *     description="Returns a quote details",

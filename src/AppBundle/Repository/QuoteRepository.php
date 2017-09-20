@@ -17,7 +17,7 @@ class QuoteRepository extends FilterRepository
         ;
     }
 
-    public function getRandom() 
+    public function getRandom()
     {
     	return $this->getBaseQueryBuilder()
                 ->select('q, a')
@@ -30,7 +30,7 @@ class QuoteRepository extends FilterRepository
          ;
     }
 
-    public function getAll($filters) 
+    public function getAll( array $filters = [] ) 
     {
         $qb = $this->getBaseQueryBuilder()
                 ->select('q, a')

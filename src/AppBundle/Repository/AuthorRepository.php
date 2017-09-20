@@ -18,7 +18,7 @@ class AuthorRepository extends FilterRepository
         ;
     }
 
-    public function getAll( $filters ) 
+    public function getAll( array $filters = [] ) 
     {
         $qb = $this->getBaseQueryBuilder();
         $qb = $this->filterAndSort( $filters, $qb );

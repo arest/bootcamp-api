@@ -26,6 +26,24 @@ class AuthorControllerTest extends BaseControllerTest
         $this->assertEquals($data['email'], $author->getEmail() );	
     }
     
+    public function testGetWithQuotesSuccess()
+    {
+        $client = static::createClient();
+
+        $author = $this->fixtures->getReference('author-1');
+        $crawler = $client->request('GET', '/api/author/'.$author->getId().'/quotes' );
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $data = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey('firstName', $data );
+        $this->assertArrayHasKey('lastName', $data );
+        $this->assertArrayNotHasKey('email', $data );
+        $this->assertArrayHasKey('id', $data );
+        $this->assertArrayHasKey('quotes', $data );
+        $this->assertGreaterThan( 0, $data['quotes'] ); // This can fail ...
+    }
 
 
 

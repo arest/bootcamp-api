@@ -20,7 +20,7 @@ class Author
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Serializer\Groups({"list","details"})
+     * @Serializer\Groups({"list","details","wp_front"})
      * @Serializer\Expose
      */
     protected $id;
@@ -66,6 +66,8 @@ class Author
      *   mappedBy="author",
      *   cascade={"persist", "remove"}
      * )
+     * @Serializer\Groups({"wp_front"})
+     * @Serializer\Expose
      */
     private $quotes;
 
