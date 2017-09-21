@@ -9,3 +9,16 @@ services:
         class: AppBundle\Form\Type\QuoteFormType
         tags:
             - { name: form.type, alias: quote }
+
+    app.oauth_server.authorize.form:
+        class: 'AppBundle\Form\Type\AuthorizeFormType'
+        tags:
+            - { name: form.type, alias: app_oauth_server_authorize }
+
+    app.oauth_server.authorize.form_handler:
+        class: AppBundle\Form\Handler\AuthorizeFormHandler
+        arguments:
+          - "@app.request"
+          - "@security.token_storage"
+          - "@fos_oauth_server.server"
+

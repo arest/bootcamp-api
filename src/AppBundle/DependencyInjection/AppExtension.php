@@ -28,7 +28,9 @@ class AppExtension extends Extension
         $loader->load('form.yml');
         $loader->load('repository.yml');
         $loader->load('voter.yml');
+
         $finder=new Finder();
+        
         foreach($finder->files()->in(__DIR__.'/../Resources/config') as $file)
         {
             $filePath=$file->getRealPath();

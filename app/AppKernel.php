@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             
             new AdminBundle\AdminBundle(),
             new AppBundle\AppBundle(),

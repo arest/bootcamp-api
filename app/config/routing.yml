@@ -1,3 +1,13 @@
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+app_oauth_server_security:
+    resource: "@AppBundle/Resources/config/routing/security.xml"
+    prefix: /
+
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
@@ -9,7 +19,6 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
-
 admin:
     resource: "@AdminBundle/Controller/"
     type:     annotation
@@ -19,6 +28,7 @@ _simple_admin_routes:
     resource: .
     type: simple_admin
     prefix: /admin
+
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

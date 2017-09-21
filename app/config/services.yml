@@ -32,3 +32,7 @@ services:
     AppBundle\Security\ApiKeyUserProvider:
         arguments:
             $repository: '@app.repository.user'
+
+    app.request:
+        class: Symfony\Component\HttpFoundation\RequestStack
+        factory: [ "@request_stack", getCurrentRequest ]
