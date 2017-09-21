@@ -34,5 +34,5 @@ DELIVERABLES
 	3) AdminBundle is a my recycled bundle to manage CRUD. /admin/dashboard (user:admin, pwd: admin)
 	   Wordpress CRUD is a React app using components from Admin on Rest.
 	   API documentation /api/doc/
-	   Docker used to setup the aws instance
+	   Docker / Docker compose used to setup the aws instance ( nginx, php-fpm, mysql, phpmyadmin )
 	   
