@@ -20,8 +20,15 @@
             "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
         ]
     },
+    "repositories": [  
+        {  
+            "type": "vcs",  
+            "url": "https://github.com/arest/oauth2-php"  
+        }  
+    ],
     "require": {
         "php": ">=5.5.9",
+        "FriendsOfSymfony/oauth2-php": "dev-master",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "friendsofsymfony/jsrouting-bundle": "^1.6",
