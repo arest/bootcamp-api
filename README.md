@@ -27,12 +27,27 @@ QUESTIONS
 
 DELIVERABLES
 ========
-	1) git@github.com:arest/bootcamp-api.git
-	
-	2) git@github.com:arest/Viddyoze_wordpress.git
+	1) https://github.com/arest/Viddyoze_wordpress
+	   Not only the plugin, but the whole wordpress blog to store some template modifications
 
-	3) AdminBundle is a my recycled bundle to manage CRUD. /admin/dashboard (user:admin, pwd: admin)
-	   Wordpress CRUD is a React app using components from Admin on Rest.
-	   API documentation /api/doc/
+	2) https://github.com/arest/bootcamp-api
+
+	   update your etc/hosts: 
+	   34.210.86.236 bootcamp_symfony.aws.com bootcamp_wordpress.aws.com
+
+	3) AdminBundle is a my recycled bundle to manage CRUD
+	   Wordpress CRUD is a React app using components from Admin on Rest project.
+
 	   Docker / Docker compose used to setup the aws instance ( nginx, php-fpm, mysql, phpmyadmin )
+
+	   Symfony API admin
+	   http://bootcamp_symfony.aws.com/admin/dashboard
+	   ( admin / admin )
+
+	   Wordpress admin
+	   http://bootcamp_wordpress.aws.com/wp-admin
+	   ( admin / admin )
+
+	   Api documentation
+	   http://bootcamp_symfony.aws.com/api/doc/
 	   
