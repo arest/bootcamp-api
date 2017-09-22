@@ -32,6 +32,10 @@ services:
     AppBundle\Security\ApiKeyUserProvider:
         arguments:
             $repository: '@app.repository.user'
+    
+    AppBundle\Security\AccessTokenUserProvider:
+        arguments:
+            $repository: '@app.repository.access_token'
 
     app.request:
         class: Symfony\Component\HttpFoundation\RequestStack

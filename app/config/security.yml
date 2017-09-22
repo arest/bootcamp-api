@@ -18,6 +18,8 @@ security:
             id: fos_user.user_provider.username
         api_key_user_provider:
             id: AppBundle\Security\ApiKeyUserProvider
+        access_token_user_provider:
+            id: AppBundle\Security\AccessTokenUserProvider
         in_memory:
             memory:
                 users:
@@ -64,11 +66,11 @@ security:
         main:
             pattern: ^/api
             stateless: true
-            fos_oauth:  true
-            #anonymous:  ~
-            # simple_preauth:
-            #     authenticator: AppBundle\Security\ApiKeyAuthenticator
-            # provider: api_key_user_provider
+            #fos_oauth: true
+            anonymous: false
+            simple_preauth:
+                authenticator: AppBundle\Security\AccessTokenAuthenticator
+            provider: access_token_user_provider
 
         admin:
             pattern:   ^/admin(.*)
