@@ -1,0 +1,15 @@
+admin.menu.author: "Author"
+admin.menu.quote: "Quote"
+admin.author.list.id: ID
+admin.author.list.firstName: Name
+admin.author.list.lastName: Surname
+admin.author.list.email: Email
+admin.quote.list.id: ID
+admin.quote.list.author: Author
+admin.quote.list.content: Sentence
+admin.crud.form.author: Author
+admin.crud.form.content: Content
+admin.crud.form.email: Email
+admin.crud.form.firstName: Name
+admin.crud.form.lastName: Surname
+admin.crud.flash.success: Record saved

@@ -1,0 +1,10 @@
+parameters:
+services:    
+    simple_admin.form.handler:
+        class: AdminBundle\Form\Handler\FormHandler
+        arguments: ["@doctrine.orm.default_entity_manager", "@security.token_storage", "@event_dispatcher"]
+        abstract: true
+
+    simple_admin.form.generic.handler:
+        class: AdminBundle\Form\Handler\CRUDFormHandler
+        parent: simple_admin.form.handler

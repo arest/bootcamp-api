@@ -1,0 +1,110 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% form_theme form with ['bootstrap_3_layout.html.twig', 'AdminBundle:crud:fields.html.twig'] %}
+
+{% set queryParams = app.request.query.all %}
+{% set action = item.id ? path('_app_crud_' ~  route_pattern ~'_edit', queryParams|merge({id:item.id}) ) : path('_app_crud_' ~  route_pattern ~'_create') %}
+
+{% block page_title %}
+  {{ ('admin.menu.'~ route_pattern)|trans|raw}} : <i>{{ item.id }}</i>
+{% endblock page_title %}
+
+{% block page_content %}
+
+{% for flash_message in app.session.flashbag.get('danger') %}
+  <div class="alert alert-danger">
+      {{ flash_message|trans }}
+  </div>
+{% endfor %}
+
+{% for flash_message in app.session.flashbag.get('warning') %}
+  <div class="alert alert-warning">
+      {{ flash_message|trans }}
+  </div>
+{% endfor %}
+
+{% for flash_message in app.session.flashbag.get('success') %}
+  <div class="alert alert-success">
+      {{ flash_message|trans }}
+  </div>
+{% endfor %}
+
+
+
+{% for error in form.vars.errors %}
+  <div class="alert alert-warning" role="alert">
+    {{ error.messageTemplate|trans(error.messageParameters, 'validators')~'' }}
+  </div>
+{% endfor %}
+
+
+{{ form_errors(form) }}
+
+
+{% block back_to_listing %}
+  {% if is_granted('list', item ) %}
+  <div class="row">
+    <div class="col-lg-8">
+      <a href="{{ path('_app_crud_' ~  route_pattern ~'_list') }}" class="btn btn-default btn-flat btn-sm ">
+        <span class="glyphicon glyphicon-arrow-left"></span> {{ 'admin.crud.edit.back'|trans({},'AdminBundle') }}
+      </a>
+    </div>
+  </div>
+  <br />
+  {% endif %}
+{% endblock back_to_listing %}
+
+{{ form_start(form,{'action':action,'method':'post','attr':{'class':'','role':'form', 'id': 'form'}}) }}
+<div class="box box-primary">
+	<div class="box-body">
+
+		  {% include form_view with { form:form } %}
+	</div>
+</div>
+
+{% block edit_actions %}
+<div class="box" id="global_actions">
+  <div class="box-header with-border">
+    <i class="fa fa-edit"></i>
+    <h3 class="box-title">Global actions</h3>
+  </div>
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-6">
+        
+        {% block remove_button %}
+        <a href="#" id="confirm-delete" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon-remove-sign"></span> {{ 'admin.crud.edit.remove'|trans({},'AdminBundle') }}
+        </a>
+        {% endblock remove_button %}
+      </div>
+      <div class="col-md-6">
+            <button id="crud_save_button" type="submit" class="btn btn-primary pull-right">
+              <span class="glyphicon glyphicon-floppy-disk"></span> {{ 'admin.crud.edit.save'|trans({},'AdminBundle') }}
+            </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock edit_actions %}
+
+<div class="hidden">
+  {{ form_rest(form) }}
+</div>
+
+{{ form_end(form) }}
+
+{% if item.id %}
+{% include 'AdminBundle:common:delete_modal.html.twig' with {
+	'action':path('_app_crud_' ~  route_pattern ~'_remove',{id:item.id}),
+  'record_type': item|className
+	} 
+%}
+{% endif %}
+
+{% endblock page_content %}
+
+
+
+
+

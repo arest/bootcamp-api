@@ -1,0 +1,24 @@
+{% set domain = domain is defined ? domain : 'admin' %}
+{% set route = app.request.attributes.get('_route') %}
+{% set params = app.request.attributes.get('_route_params') %}
+{% set direction = app.request.query.has('direction') ? app.request.query.get('direction') : 'asc' %}
+{% set new_direction = direction %}
+{% set sort = app.request.query.has('sort') ? app.request.query.get('sort') : 'id' %}
+
+{% if sort == field %}
+	{% set icon = direction == 'asc' ? 'fa-arrow-down' : 'fa-arrow-up' %}
+	{% if direction == 'asc' %}
+		{% set new_direction = 'desc' %}
+	{% endif %}
+	{% if direction == 'desc' %}
+		{% set new_direction = 'asc' %}
+	{% endif %}
+{% endif %}
+{% set url = url(route, params|merge(app.request.query.all)|merge({'sort' : field, 'direction': new_direction }) ) %}
+<a href="{{url}}">
+	{# ( domain ~ '.' ~ field)|trans #}
+	{{ ( domain ~ '.' ~ route_pattern ~ '.list.' ~ field )|trans }}
+	{% if icon is defined %}
+	<i class="fa {{icon}}"></i>
+	{% endif %}
+</a>

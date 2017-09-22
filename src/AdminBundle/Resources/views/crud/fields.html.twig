@@ -1,0 +1,33 @@
+{# app/Resources/views/admin/form/fields.html.twig #}
+{% block form_row %}
+{% spaceless %}
+	<div class="row form-group {{form.vars.block_prefixes.1}}">
+		<div class="col-md-2">
+			{{ form_label(form) }}
+		</div>
+		<div class="col-md-7">
+			{{ form_widget(form) }}
+		</div>
+		<div class="col-md-3">
+			{{ form_errors(form) }}
+			{% if form.vars.attr['data-tip'] is defined %}
+			<small class="help-block">{{form.vars.attr['data-tip']|trans|raw}}</small>
+			{% endif %}
+		</div>
+	</div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block checkbox_row %}
+{% spaceless %}
+<div class="row form-group {{form.vars.block_prefixes.1}}">
+		<div class="col-md-2"></div>
+		<div class="col-md-7">
+        	{{ form_widget(form) }}
+        </div>
+        <div class="col-md-3">
+        	{{ form_errors(form) }}
+        </div>
+</div>
+{% endspaceless %}
+{% endblock checkbox_row %}

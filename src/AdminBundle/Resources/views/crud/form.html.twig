@@ -1,0 +1,23 @@
+
+
+{#
+{% for child in form.children %}
+
+<div class="row form-group {{child.vars.block_prefixes.1}}">
+	<div class="col-md-2">
+		{{ form_label(child) }}
+	</div>
+	<div class="col-md-7">
+		{{ form_widget(child) }}
+	</div>
+	<div class="col-md-3">
+		{{ form_errors(child) }}
+		{% if child.vars.attr['data-tip'] is defined %}
+		<small class="help-block">{{child.vars.attr['data-tip']|trans}}</small>
+		{% endif %}
+	</div>
+</div>
+
+{% endfor %}
+#}
+{{ form_rest(form) }}

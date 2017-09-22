@@ -1,0 +1,7 @@
+services:
+  simple_admin.routes.loader:
+        class: AdminBundle\Router\RoutesLoader
+        arguments:
+            - "%simple_admin.routes%"
+        tags:
+            - { name: routing.loader, priority: 0 }

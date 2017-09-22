@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Backoffice</title>
+<meta charset="UTF-8" />
+<meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="{{ asset("bundles/admin/css/reset.css") }}" />
+    <link rel="stylesheet" href="{{ asset("bundles/admin/css/structure.css") }}" />
+
+</head>
+
+<body>
+
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
+</body>
+</html>

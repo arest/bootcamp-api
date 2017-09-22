@@ -1,0 +1,12 @@
+services:
+    simple_admin.repository.permission:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AdminBundle\Entity\Permission
+
+    simple_admin.repository.permission_group:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AdminBundle\Entity\PermissionGroup

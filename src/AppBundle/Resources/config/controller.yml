@@ -1,0 +1,18 @@
+services:
+    app.crud_controller.author:
+        parent: "simple_admin.crud_controller"
+        calls:
+            - [setModelType, ["AppBundle\\Entity\\Author"]]
+            - [setFormType, ["AppBundle\\Form\\Type\\AuthorFormType"]]
+            - [setHandler, ["@simple_admin.form.generic.handler"]]
+            - [setRepository, ["@app.repository.author"]]
+            - [setListFields, [["id","firstName","lastName","email"]]]
+
+    app.crud_controller.quote:
+        parent: "simple_admin.crud_controller"
+        calls:
+            - [setModelType, ["AppBundle\\Entity\\Quote"]]
+            - [setFormType, ["AppBundle\\Form\\Type\\QuoteFormType"]]
+            - [setHandler, ["@simple_admin.form.generic.handler"]]
+            - [setRepository, ["@app.repository.quote"]]
+            - [setListFields, [["id","author","content"]]]

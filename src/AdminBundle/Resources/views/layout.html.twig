@@ -1,0 +1,97 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% trans_default_domain "messages" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block head_style %}
+<!-- Latest compiled and minified CSS -->
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">#}
+<link rel="stylesheet" href="{{ asset('bundles/admin/bootstrap/css/bootstrap.min.css') }}">
+
+<!-- Font Awesome Icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!-- Ionicons -->
+<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<!-- jvectormap -->
+<link href="{{ asset('bundles/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
+<!-- Theme style -->
+<link href="{{ asset('bundles/admin/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
+<!-- Theme skin -->
+<link href="{{ asset('bundles/admin/dist/css/skins/skin-blue.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/admin/css/main.css')}}" rel="stylesheet" type="text/css" />
+
+    <div class="wrapper">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+{% endblock head_style %}
+
+{% block sidebar %}
+ {# <form action="#" method="get" class="sidebar-form">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            </button>
+          </span>
+    </div>
+  </form> #}
+
+  {{ knp_menu_render('AdminBundle:AdminBuilder:sidebarMenu', {'currentClass': 'active'}) }}
+{% endblock sidebar %}
+
+{% block logo %}
+        <!-- Logo -->
+        <a href="{{path( '_app_admin_dashboard' )}}" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>V</b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg">Viddyoze</span>
+        </a>
+{% endblock logo %}
+
+{% block navigation %}
+	{% include 'AdminBundle:common:navbar.html.twig' %}
+{% endblock navigation %}
+
+
+{% block page_title %}
+ <h1>
+    Dashboard
+    <small>Version 1.0</small>
+  </h1>
+
+{% endblock page_title %}
+
+{% block footer %}
+<div class="pull-right hidden-xs">
+	<b>Version</b> 1.0
+</div>
+<strong>Copyright &copy; {{ 'now'|date('Y')}} All rights reserved.
+{% endblock footer %}
+
+{% block foot_script_assetic %}
+
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>    
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+<!-- jQuery 2.1.4 -->
+<script src="{{ asset('bundles/admin/plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="{{ asset('bundles/admin/bootstrap/js/bootstrap.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{ asset('bundles/admin/plugins/fastclick/fastclick.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('bundles/admin/dist/js/app.min.js')}}" type="text/javascript"></script>
+<!-- Sparkline -->
+<script src="{{ asset('bundles/admin/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset('bundles/admin/js/main.js') }}" type="text/javascript" async defer></script>    
+
+{% endblock foot_script_assetic %}
+
+{% block page_content %}{% endblock %}

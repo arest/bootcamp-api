@@ -1,0 +1,18 @@
+{% trans_default_domain "AdminBundle" %}
+
+<div class="col-md-12">
+	{{ form_start(form,{'action':action,'method':'get','attr':{'class':'form-filters form-horizontal','role':'form'}}) }}
+		<div class="pull-right">
+			<div class="controls form-inline"> 
+				<div class="input-group">
+					{{ form_widget(form.search, {'attr':{'class':'form-control'}} ) }}
+					<span class="input-group-btn">
+           		    <button type="submit" name="search" id="search-btn" class="btn bnt-block btn-flat">
+           		    	<i class="fa fa-search"></i>
+           		    </button>
+          			</span>
+				</div>
+			</div>
+		</div>
+	{{ form_end(form) }}
+</div>

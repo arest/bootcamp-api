@@ -4,9 +4,15 @@ imports:
 framework:
     test: ~
     session:
+        #storage_id: session.storage.mock_file
         storage_id: session.storage.mock_file
+        name: MOCKSESSID
     profiler:
         collect: false
+
+doctrine:
+    dbal:
+        dbname: '%database_name%_test'
 
 web_profiler:
     toolbar: false
@@ -14,3 +20,10 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+
+liip_functional_test:
+    cache_sqlite_db: true
+    authentication:
+        username: "admin"
+        password: "admin"

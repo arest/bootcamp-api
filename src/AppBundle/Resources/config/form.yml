@@ -1,0 +1,11 @@
+services:
+
+    app.form.type.author:
+        class: AppBundle\Form\Type\AuthorFormType
+        tags:
+            - { name: form.type, alias: author }
+
+    app.form.type.quote:
+        class: AppBundle\Form\Type\QuoteFormType
+        tags:
+            - { name: form.type, alias: quote }

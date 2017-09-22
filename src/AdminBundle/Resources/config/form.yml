@@ -1,0 +1,17 @@
+parameters: ~
+services:
+    simple_admin.form.filter:
+        class: AdminBundle\Form\Type\FilterFormType
+        tags:
+            - { name: form.type, alias: simple_admin_filters }
+
+    simple_admin.form.permission:
+        class: AdminBundle\Form\Type\User\PermissionFormType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type, alias: simple_admin_permission }
+
+    simple_admin.form.permission_group:
+        class: AdminBundle\Form\Type\User\PermissionGroupFormType
+        tags:
+            - { name: form.type, alias: simple_admin_permission_group }

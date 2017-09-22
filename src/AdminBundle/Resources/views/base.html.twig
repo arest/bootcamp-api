@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    {% block head_style %}{% endblock head_style %}
+  </head>
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        {% block logo %}{% endblock logo %}
+        {% block navigation %}{% endblock navigation %}
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <div class="slimScrollDiv" id="scrollspy">
+          <div class="sidebar">
+          {% block sidebar %}{% endblock sidebar %}
+          </div>
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        {% block page_title %}{% endblock page_title %}
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          {% block page_content %}{% endblock page_content %}
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        {% block footer %}{% endblock footer %}
+      </footer>
+
+    </div><!-- ./wrapper -->
+
+    {% block foot_script_assetic %}{% endblock foot_script_assetic %}
+  </body>
+</html>
+

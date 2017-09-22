@@ -1,0 +1,6 @@
+{% if field == 'status' %}
+	{{ ('admin.crud.form.status.' ~ attribute(item,field))|trans }}
+
+{% else %}
+{{ attribute(item,field) }}
+{% endif %}
