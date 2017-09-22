@@ -14,7 +14,7 @@ QUESTIONS
 	2) How will you handle auth? 
 
 	The initial choice was to add api key. So there is a custom Service Provider looking for an apikey both on query string or as a custom header. The administrator can add users and change their api key.
-	I think I have time to implent OAuth2
+	Yes I implemented OAuth2 on branch "oauth"
 
 	3) Further to 2. How will your plugin work when its installed on multiple blogs? Is there a single shared pool of quotes or are they somehow divided?
 
