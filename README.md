@@ -29,8 +29,10 @@ QUESTIONS
 
 DELIVERABLES
 ========
-	1) https://github.com/arest/Viddyoze_wordpress
-	   Not only the plugin, but the whole wordpress blog to store some template modifications
+	1) https://github.com/arest/bootcamp-plugin
+
+	   https://github.com/arest/Viddyoze_wordpress
+	   Working repo. The whole wordpress blog to store some template modifications
 
 	2) https://github.com/arest/bootcamp-api
 
